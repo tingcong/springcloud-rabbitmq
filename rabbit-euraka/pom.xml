@@ -12,6 +12,7 @@
     <version>1.0.0-SNAPSHOT</version>
     <name>rabbit-euraka</name>
     <description>Demo project for Spring Boot</description>
+    <packaging>jar</packaging>
 
     <properties>
         <java.version>1.8</java.version>

@@ -1,16 +1,20 @@
 server:
   port: 9000
 spring:
-  #给项目来个名字
+  zipkin:
+    sender:
+      type: rabbit
+    sleuth:
+      sampler:
+        probability: 1.0
+    base-url: http://127.0.0.1:9411/
   application:
     name: rabbit-producer
-  #配置rabbitMq 服务器
 #  rabbitmq:
 #    host: 127.0.0.1
 #    port: 5672
 #    username: guest
 #    password: guest
-#    #虚拟host 可以不设置,使用server默认host
 #    virtual-host: /
 eureka:
   client:

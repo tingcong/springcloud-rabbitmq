@@ -1,16 +1,20 @@
 server:
   port: 9000
 spring:
-  #����Ŀ��������
+  zipkin:
+    sender:
+      type: rabbit
+    sleuth:
+      sampler:
+        probability: 1.0
+    base-url: http://127.0.0.1:9411/
   application:
     name: rabbit-producer
-  #����rabbitMq ������
 #  rabbitmq:
 #    host: 127.0.0.1
 #    port: 5672
 #    username: guest
 #    password: guest
-#    #����host ���Բ�����,ʹ��serverĬ��host
 #    virtual-host: /
 eureka:
   client:
