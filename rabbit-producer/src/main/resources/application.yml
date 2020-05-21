@@ -1,24 +1,43 @@
-server:
-  port: 9000
 spring:
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+    listener:
+      direct:
+        retry:
+          enabled: true
+      simple:
+        retry:
+          enabled: true
+  sleuth:
+    sampler:
+      probability: 1
+      rate: 2
   zipkin:
     sender:
       type: rabbit
-    sleuth:
-      sampler:
-        probability: 1.0
-    base-url: http://127.0.0.1:9411/
+
   application:
     name: rabbit-producer
-#  rabbitmq:
-#    host: 127.0.0.1
-#    port: 5672
-#    username: guest
-#    password: guest
-#    virtual-host: /
+
+server:
+  port: 9100
+  servlet:
+    context-path: /rabbit-producer
+
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8080/eureka/
     fetch-registry: true
     register-with-eureka: true
+
+# print trace log
+logging:
+  level:
+    root: DEBUG
+    org.springframework.web.servlet.DispatcherServlet: DEBUG
+    org.springframework.cloud.sleuth: DEBUG

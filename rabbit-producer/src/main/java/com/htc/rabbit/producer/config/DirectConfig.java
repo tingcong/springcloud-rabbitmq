@@ -15,7 +15,7 @@ import static com.htc.rabbit.constant.RoutingKey.DIRECT_ROUTING_KEY;
  * @date: 2020/5/16.
  * @descr:
  */
-@Configuration
+//@Configuration
 public class DirectConfig {
 
 

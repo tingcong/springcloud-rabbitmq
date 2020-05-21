@@ -21,12 +21,13 @@ spring:
       type: rabbit
 
   application:
-    name: rabbit-producer
+    name: rabbit-consumer
+
 
 server:
-  port: 9100
+  port: 9200
   servlet:
-    context-path: /rabbit-producer
+    context-path: /rabbit-consumer
 
 eureka:
   client:
@@ -38,6 +39,6 @@ eureka:
 # print trace log
 logging:
   level:
-    root: DEBUG
+    root: INFO
     org.springframework.web.servlet.DispatcherServlet: DEBUG
     org.springframework.cloud.sleuth: DEBUG
