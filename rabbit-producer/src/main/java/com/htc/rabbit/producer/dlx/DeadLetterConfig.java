@@ -8,8 +8,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.util.HashMap;
-import java.util.Map;
+import static com.htc.rabbit.constant.ExchangeName.DLX_EXCHANGE;
+import static com.htc.rabbit.constant.QueueName.DLX_QUEUE;
+import static com.htc.rabbit.constant.RoutingKey.DLX_ROUTING_KEY;
 
 /**
  * @author: hutingcong
@@ -18,9 +19,6 @@ import java.util.Map;
  */
 @Configuration
 public class DeadLetterConfig {
-    public final static String DLX_EXCHANGE = "htc.dlx.exchange";
-    public final static String DLX_QUEUE = "htc.dlx.queue";
-    public final static String DLX_ROUTING_KEY = "htc.dlx.routing.key";
 
     /**
      * 声明死信交换机

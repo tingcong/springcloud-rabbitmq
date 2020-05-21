@@ -6,5 +6,15 @@ package com.htc.rabbit.constant;
  * @descr:
  */
 public interface ExchangeName {
-    final String DIRECT_EXCHANGE = "direct.exchange";
+
+    /**
+     * 业务交换机
+     */
+    public final static String BUSSINESS_EXCHANGE = "htc.bussiness.exchange";
+
+    /**
+     * 死信交换机
+     */
+    public final static String DLX_EXCHANGE = "htc.dlx.exchange";
+
 }

@@ -8,7 +8,13 @@ package com.htc.rabbit.constant;
 public interface QueueName {
 
     /**
-     * A业务队列
+     * 业务队列
      */
-    final String BUSSINESS_A_QUEUE = "bussiness.a.queue";
+    public final static String BUSSINESS_QUEUE = "htc.bussiness.queue";
+
+    /**
+     * 死信队列
+     */
+    public final static String DLX_QUEUE = "htc.dlx.queue";
+
 }

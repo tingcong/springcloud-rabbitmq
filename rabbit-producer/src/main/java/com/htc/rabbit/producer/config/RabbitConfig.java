@@ -15,6 +15,7 @@ import org.springframework.context.annotation.Configuration;
  * @date: 2020/5/16.
  * @descr:
  */
+@Deprecated
 //@EnableRabbit
 //@Configuration
 public class RabbitConfig {

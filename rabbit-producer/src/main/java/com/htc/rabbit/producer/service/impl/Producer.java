@@ -1,18 +1,12 @@
 package com.htc.rabbit.producer.service.impl;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.amqp.core.MessagePostProcessor;
-import org.springframework.amqp.core.MessageProperties;
-import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.UUID;
-
-import static com.htc.rabbit.producer.config.BussinessConfig.BUSSINESS_QUEUE;
+import static com.htc.rabbit.constant.QueueName.BUSSINESS_QUEUE;
 
 /**
  * @author: hutingcong
@@ -25,8 +19,13 @@ public class Producer {
     @Autowired
     RabbitTemplate rabbitTemplate;
 
+    /**
+     * 业务队列
+     * @param rabbitMsg
+     * @return
+     */
     @GetMapping("/producer")
-    public String send(String rabbitMsg) {
+    public String producer(String rabbitMsg) {
         log.info("生产者发送消息：{}", rabbitMsg);
         rabbitTemplate.convertAndSend(BUSSINESS_QUEUE, rabbitMsg);
         return "success";

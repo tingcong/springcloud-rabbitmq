@@ -6,5 +6,14 @@ package com.htc.rabbit.constant;
  * @descr:
  */
 public interface RoutingKey {
-    final String DIRECT_ROUTING_KEY = "direct_routing_key";
+    /**
+     * 业务路由键
+     */
+    public final static String BUSSINESS_ROUTING_KEY = "htc.bussiness.routing.key";
+
+    /**
+     * 死信路由键
+     */
+    public final static String DLX_ROUTING_KEY = "htc.dlx.routing.key";
+
 }
