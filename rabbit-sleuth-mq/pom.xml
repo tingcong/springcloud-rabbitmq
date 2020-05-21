@@ -8,26 +8,26 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     <groupId>com.htc.rabbit</groupId>
-    <artifactId>rabbit-service</artifactId>
+    <artifactId>rabbit-sleuth-mq</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <name>rabbit-service</name>
+    <name>rabbit-sleuth-mq</name>
     <packaging>jar</packaging>
-    <description>Demo project for Spring Boot</description>
+    <description>sleuth with rabbitmq</description>
 
     <properties>
         <java.version>1.8</java.version>
     </properties>
+
     <dependencies>
-        <!--zipkin client-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-zipkin</artifactId>
         </dependency>
-        <!--rabbitmq-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
     </dependencies>
+
 
 </project>

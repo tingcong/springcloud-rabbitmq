@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: rabbit-sleuth
+server:
+  port: 9100
+  servlet:
+    context-path: /rabbit-sleuth
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8080/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+
+# print trace log
+logging:
+  level:
+    root: INFO
+    org.springframework.web.servlet.DispatcherServlet: DEBUG
+    org.springframework.cloud.sleuth: DEBUG

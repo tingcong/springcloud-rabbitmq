@@ -1,0 +1,41 @@
+spring:
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+    listener:
+      direct:
+        retry:
+          enabled: true
+      simple:
+        retry:
+          enabled: true
+  sleuth:
+    sampler:
+      probability: 1
+      rate: 2
+  zipkin:
+    sender:
+      type: rabbit
+
+  application:
+    name: rabbit-sleuth-mq
+
+server:
+  port: 9100
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8080/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+
+# print trace log
+logging:
+  level:
+    root: INFO
+    org.springframework.web.servlet.DispatcherServlet: DEBUG
+    org.springframework.cloud.sleuth: DEBUG
